@@ -11,8 +11,8 @@ import {
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 
-import { ProductService } from '../../../service/products.service';
-import { CategoryService } from '../../../service/category.service';
+import { ProductService } from '../../../../service/products.service';
+import { CategoryService } from '../../../../service/category.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -50,7 +50,7 @@ export class CreateComponent {
     if (this.userForm.valid) {
       const formData = this.userForm.value;
 
-      this.productService.addProductAdmin(formData).subscribe((data: any) => {
+      this.productService.addProduct(formData).subscribe((data: any) => {
         if (data.status === 0) {
           this.messageService.add({
             severity: 'success',
